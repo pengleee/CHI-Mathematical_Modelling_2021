@@ -1,0 +1,130 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage[a4paper,left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
+
+\title{\textbf{CSC3100 Assignment1 Report}}
+\author{Peng Li}
+\date{\today}
+\linespread{1.2}
+
+\begin{document}
+
+\maketitle
+
+\section{Finding the k-th largest value}
+    \noindent This file is saved in A1\_Findingkth\_120090470.java. 
+
+    \subsection{Possible solutions}
+    In this problem, we need to find the kth max number from an unordered sequence. The key problem is to sort the numbers in the sequence. There are many sorting algorithms including \textit{Bubble Sort}, \textit{Selection Sort}, \textit{Insertion Sort}, \textit{Merge Sort}, \textit{Quick Sort}, \textit{Heap Sort}, \textit{Shell Sort}, \textit{Count Sort}, \textit{Bucket Sort} and so on. Once we finish sorting the sequence, finding the k-th largest value will be easy. 
+
+    \subsection{My solution}
+    I choose Quick Sort. The quick sort is regarded as the best sorting algorithm. This is because of its significant advantage in terms of efficiency because it is able to deal well with a huge list of items. Because it sorts in place, no additional storage is required as well. No additional storage is required as well because it sorts in place.
+
+    \subsection{Strength of my solution}
+    \textit{Quick Sort} is efficient. In this problem, we only need to find the kth largest value. We can even optimize the algorithm. After partitioning, only one side of the pivot needs to be sorted further, which declines a lot of time. Also, to improve efficiency, a \textit{fast reader} is also implemented in this program for faster data input.
+
+    \subsection{Sample tests}
+    I test my code with different cases like a reversed order sequence (Figure 1), a sequence with large numbers (Figure 2).
+
+        % \begin{figure}[htb]
+        %     \centering
+        %     \includegraphics[width=0.5\textwidth]{graphs/截屏2021-06-24 11.39.15.png}
+        %     \caption{Reversed order sequence}
+        % \end{figure}
+
+        % \begin{figure}[htb]
+        %     \centering
+        %     \includegraphics[width=0.5\textwidth]{graphs/截屏2021-06-24 11.40.28.png}
+        %     \caption{Large number sequence}
+        % \end{figure}
+
+        \begin{figure}[h]
+            \begin{minipage}{0.5\linewidth}
+              \centering
+              \includegraphics[scale=0.6]{graphs/截屏2021-06-24 11.39.15.png}
+              \caption{Reversed order sequence}
+            \end{minipage}
+            \begin{minipage}{0.5\linewidth}
+              \centering
+              \includegraphics[scale=0.7]{graphs/截屏2021-06-24 11.40.28.png}
+              \caption{Large number sequence}
+            \end{minipage}
+        \end{figure}
+\vspace{5cm}
+
+\section{Merge Sort}
+    \noindent This file is saved in A1\_MergeSort\_120090470.java. 
+
+    \subsection{Possible solutions}
+    Conceptually, a merge sort works as follows:
+    Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
+    Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list. \par
+    Typically, we have two ways to implement the Merge Sort: \underline{Top-down method (Recursion)} and \underline{Bottom method (Iteration)}.
+    As for the function \textit{merge}, we can divide the sequence by different parts (two, three, four or even more).
+
+    \subsection{My solution}
+    My way is Recursion and to divide the sequence into two parts. 
+
+    \subsection{Strength of my solution}
+    The way to use Recursion is more straightforward and easy to understand and implement. Also, only dividing by two parts can decline the time complexity. Beside, a \textit{fast reader} is also implemented in this program for faster data input. 
+
+    \subsection{Sample tests}
+    I test my code with different cases like a reversed order sequence (Figure 3) and random order sequence (Figure 4).
+
+    \begin{figure}[h]
+        \begin{minipage}{0.5\linewidth}
+          \centering
+          \includegraphics[scale=0.8]{graphs/截屏2021-06-24 12.27.06.png}
+          \caption{Reversed order sequence}
+        \end{minipage}
+        \begin{minipage}{0.5\linewidth}
+          \centering
+          \includegraphics[scale=0.8]{graphs/截屏2021-06-24 12.28.34.png}
+          \caption{Random order sequence}
+        \end{minipage}
+    \end{figure}
+
+
+\section{Prefix Expression}
+This file is saved in A1\_PrefixExp\_120090470.java. 
+
+    \subsection{Possible solutions}
+    The way to store the numbers (operands) varies. For example, list, array, stack can be used. \par
+    As the numbers may be huge and exceed the maximum limit, we need to mod the numbers with 1,000,000,007. Mathematically, (A + B) mod C = (A mod C + B mod C) mod C , (A × B) mod C = (A mod C × B mod C) mod C . We can choose to model in the calculating process or model in the final result.\par
+    As for the validation for the prefix expression, we can also use Stack. Nevertheless, \textit{try... catch...} structure might be more convenient, although it may have higher time complexity.
+
+    \subsection{My solution}
+    I use Stack to store operands and model in the calculating process. For validation, I use \textit{try... catch...} structure. 
+
+    \subsection{Strength of my solution}
+    Stack is a kind of data structure which is less time-consuming. It is easier to add or delete items.\par 
+    Modelling in the calculating process can avoid the arithmetic overflow of the calculating result like A + B or A × B.
+
+    \subsection{Sample tests}
+    Here I give three cases of my tests. First, the correct situation with operators * and + (Figure 5). Second, the invalid input (Figure 6). Third, the case of arithmetic overflow (Figure 7). The final one shows \textit{Invalid}. If we do not model in the process and just model the result with 1,000,000,007, probably the program will give an answer, but the answer may be wrong. 
+
+    \begin{figure}[h]
+      \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[scale=0.6]{graphs/截屏2021-06-24 16.54.54.png}
+        \caption{Correct case}
+      \end{minipage}
+      \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[scale=0.6]{graphs/截屏2021-06-24 16.55.20.png}
+        \caption{Invalid case}
+      \end{minipage}
+    \end{figure}
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.6]{graphs/截屏2021-06-24 17.01.37.png}
+        \caption{Arithmetic overflow}
+      \end{figure}
+
+
+\end{document}
+
+
